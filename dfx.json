@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "icp-make-canister-backend": {
+      "build": "npx azle icp-make-canister-backend",
+      "candid": "src/icp-make-canister-backend/icp-make-canister-backend.did",
+      "gzip": true,
+      "main": "src/icp-make-canister-backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/icp-make-canister-backend/icp-make-canister-backend.wasm"
+    },
+    "icp-make-canister-frontend": {
+      "dependencies": [
+        "icp-make-canister-backend"
+      ],
+      "source": [
+        "src/icp-make-canister-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "icp-make-canister-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
